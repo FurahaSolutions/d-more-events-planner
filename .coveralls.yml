@@ -1,0 +1,4 @@
+repo_token: y7dlRQvovnRnnT4k83cD5vGIvlagoAnpi
+coverage_clover: tests/coverage/clover.xml
+json_path: tests/coverage/coveralls-upload.json
+service_name: circle-ci
