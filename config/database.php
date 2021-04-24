@@ -6,8 +6,8 @@ $default = env('DB_CONNECTION', 'mysql');
 $DATABASE_URL = [
     'host' => env('DB_HOST', '127.0.0.1'),
     'port' => env('DB_PORT', '5432'),
-    'database' => env('DB_DATABASE', 'testing'),
-    'user' => env('DB_USERNAME', 'root'),
+    'database' => env('DB_DATABASE', 'forge'),
+    'user' => env('DB_USERNAME', 'forge'),
     'pass' => env('DB_PASSWORD', '')
 ];
 if (env('HEROKU_POSTGRES') != null) {
@@ -61,8 +61,8 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'testing'),
-            'username' => env('DB_USERNAME', 'root'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
@@ -105,10 +105,10 @@ return [
         ],
         'testing' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'dmore_testing'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_TEST_HOST', 'localhost'),
+            'database' => env('DB_TEST_DATABASE', 'dmore_testing'),
+            'username' => env('DB_TEST_USERNAME', 'root'),
+            'password' => env('DB_TEST_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
