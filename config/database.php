@@ -106,7 +106,7 @@ return [
         'testing' => [
             'driver' => 'mysql',
             'host' => env('DB_TEST_HOST', 'localhost'),
-            'database' => env('DB_TEST_DATABASE', 'furahasms_testing'),
+            'database' => env('DB_TEST_DATABASE', 'dmore_testing'),
             'username' => env('DB_TEST_USERNAME', 'root'),
             'password' => env('DB_TEST_PASSWORD', 'secret'),
             'charset' => 'utf8',
