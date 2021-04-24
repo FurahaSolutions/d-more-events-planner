@@ -1,24 +1,14 @@
-# PHP CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-php/ for more details
-#
 version: 2
 jobs:
   test:
     docker:
-      # Specify the version you desire here
       - image: circleci/php:8.0.3-apache
+        name: Set up PHP
         environment:
           XDEBUG_MODE: coverage
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # Using the RAM variation mitigates I/O contention
-      # for database intensive operations.
-      # - image: circleci/mysql:5.7-ram
-      # - image: redis:3
       - image: circleci/mysql:8.0.20-ram
+        name: Set up MYSQL
         command: mysqld --default-authentication-plugin=mysql_native_password
         environment:
           WITH_XDEBUG: 1
@@ -42,13 +32,9 @@ jobs:
                  && sudo docker-php-ext-configure gd --with-freetype --with-jpeg \
                  && sudo docker-php-ext-install -j$(nproc) gd
 
-      # composer cache
       - restore_cache:
           keys:
-            # "composer.json" can be used if "composer.json"
-            # is not committed to the repository.
             - composer-v1-{{ checksum "composer.lock" }}
-            # fallback to using the latest cache if no exact match is found
             - composer-v1-
       - run: composer install -n --prefer-dist
       - run: composer require --dev php-coveralls/php-coveralls
