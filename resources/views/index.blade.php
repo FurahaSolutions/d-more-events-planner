@@ -25,11 +25,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="/assets/css/fontawesome-all.css" rel="stylesheet">
     <!--// Style-sheets -->
+@if($secure === true)
     <!--web-fonts-->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-    <!--//web-fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+        <!--//web-fonts-->
+@else
+    <!--web-fonts-->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+        <!--//web-fonts-->
+    @endif
+
 </head>
 
 <body>
