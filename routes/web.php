@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,5 @@ Route::get('/gallery', function () {
 Route::get('/contact', function () {
     return view('pages.contact');
 });
+
+Route::get('events/{event}', [EventController::class, 'show']);
