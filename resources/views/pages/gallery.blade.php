@@ -1,9 +1,9 @@
 <x-shell>
     <div class="banner inner-banner" id="home">
-        <x-header page="about"/>
+        <x-header page="gallery"/>
         <h1 class="inner-title-agileits-w3layouts">Photo Album</h1>
     </div>
-    <x-breadcrumb :links="['about' => 'Photo Album']"></x-breadcrumb>
+    <x-breadcrumb :links="['Our Gallery']"></x-breadcrumb>
     <!-- gallery -->
     <section class="gallery py-5">
         <div class="container py-xl-5 py-sm-3">
