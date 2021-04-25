@@ -3,7 +3,7 @@
         <x-header page="about"/>
         <h1 class="inner-title-agileits-w3layouts">About Us</h1>
     </div>
-    <x-breadcrumb :links="['about' => 'About Us']"></x-breadcrumb>
+    <x-breadcrumb :links="['About Us']"></x-breadcrumb>
 
     <!--about-->
     <section class="about-section py-5">
