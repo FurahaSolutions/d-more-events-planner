@@ -1,9 +1,9 @@
 <x-shell>
     <div class="banner inner-banner" id="home">
-        <x-header page="about"/>
+        <x-header page="contact"/>
         <h1 class="inner-title-agileits-w3layouts">About Us</h1>
     </div>
-    <x-breadcrumb :links="['about' => 'About Us']"></x-breadcrumb>
+    <x-breadcrumb :links="['Contact Us']"></x-breadcrumb>
 
     <!-- contact -->
     <section class="contact py-5">
