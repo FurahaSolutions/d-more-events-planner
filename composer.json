@@ -53,7 +53,7 @@
         ],
         "test:coverage": [
             "@putenv XDEBUG_MODE=coverage",
-            "./vendor/bin/phpunit -d memory_limit=-1 --coverage-clover tests/coverage/clover.xml"
+            "./vendor/bin/phpunit -d memory_limit=-1 --coverage-clover tests/coverage/clover.xml && cp tests/coverage/clover.xml clover.xml"
         ],
         "test:coverage-html": [
             "@putenv XDEBUG_MODE=coverage",
