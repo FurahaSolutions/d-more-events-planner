@@ -77,8 +77,9 @@ jobs:
             ./cc-test-reporter before-build
             composer run test:coverage
             ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
-#      Disabled Coveralls as it seems to have an issue
-#      - run: ./vendor/bin/php-coveralls -v
+      - run:
+          name: Upload test files to coveralls
+          command: ./vendor/bin/php-coveralls -v
 
       - store_test_results:
           path: tests/coverage
