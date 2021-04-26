@@ -16,23 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Route::get('/about', function () {
     return view('pages.about');
-});
+})->name('about');
 
 
 Route::get('/gallery', function () {
     return view('pages.gallery');
-});
+})->name('gallery');
 
 
 Route::get('/contact', function () {
     return view('pages.contact');
-});
+})->name('contact');
 
-Route::get('events/{event}', [EventController::class, 'show']);
+Route::get('events/{event}', [EventController::class, 'show'])->name('event');
 
 //Route::get('/', function () {
 //    return view('welcome');
