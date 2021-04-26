@@ -55,6 +55,10 @@
             "@putenv XDEBUG_MODE=coverage",
             "./vendor/bin/phpunit -d memory_limit=-1 --coverage-clover tests/coverage/clover.xml"
         ],
+        "test:coverage-cc": [
+            "@putenv XDEBUG_MODE=coverage",
+            "sudo ./vendor/bin/phpunit --coverage-clover tests/coverage/clover.xml"
+        ],
         "test:coverage-html": [
             "@putenv XDEBUG_MODE=coverage",
             "phpunit --color=always --coverage-html=\"tests/coverage\""
