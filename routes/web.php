@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,8 @@ Route::get('/contact', function () {
     return view('pages.contact');
 });
 
+Route::get('events/{event}', [EventController::class, 'show']);
+
 //Route::get('/', function () {
 //    return view('welcome');
 //});
@@ -40,4 +43,3 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-
