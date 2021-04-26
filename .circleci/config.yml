@@ -10,6 +10,7 @@ jobs:
       - image: circleci/php:8.0.3-apache
         environment:
           XDEBUG_MODE: coverage
+          CC_TEST_REPORTER_ID: 67036e10efc6227d53598e05cf9ee662bd2acb37543879cae02a2e76a2a6cf3d
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -67,6 +68,19 @@ jobs:
       # - run: php artisan test --coverage-html tests/coverage
       - run:
           command: composer run test:coverage
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+              curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+              chmod +x ./cc-test-reporter
+      - run:
+          name: Run tests
+          command: |
+            sudo docker-php-ext-enable xdebug
+            ./cc-test-reporter before-build
+            sudo vendor/bin/phpunit --coverage-clover clover.xml
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
+
       - run: ./vendor/bin/php-coveralls -v
 
       - store_test_results:
