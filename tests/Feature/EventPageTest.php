@@ -18,6 +18,6 @@ class EventPageTest extends TestCase
     {
         $response = $this->get('/events/weddings');
         $response->assertStatus(200);
-        $response->assertSeeText('Weddings');
+        $response->assertSeeText('weddings');
     }
 }
