@@ -2,13 +2,13 @@
 
 @if ($errors->any())
     <div {{ $attributes }}>
-        <div class="font-medium text-red-600">
+        <div class="alert alert-danger mt-3">
             {{ __('Whoops! Something went wrong.') }}
         </div>
 
-        <ul class="mt-3 list-disc list-inside text-sm text-red-600">
+        <ul class="list-group text-danger">
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li class="list-group-item">{{ $error }}</li>
             @endforeach
         </ul>
     </div>
