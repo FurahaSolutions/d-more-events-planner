@@ -10,13 +10,13 @@ $DATABASE_URL = [
     'user' => env('DB_USERNAME', 'forge'),
     'pass' => env('DB_PASSWORD', '')
 ];
-echo 'URL =>'.env('DATABASE_URL');
+
 if (env('HEROKU_POSTGRES') != null) {
     $default =  'pgsql';
     $DATABASE_URL = parse_url(env('DATABASE_URL'));
     $DATABASE_URL['database'] = ltrim($DATABASE_URL['path'], '/');
 }
-echo 'HEROKU => '.env('HEROKU_POSTGRES');
+
 return [
 
     /*
