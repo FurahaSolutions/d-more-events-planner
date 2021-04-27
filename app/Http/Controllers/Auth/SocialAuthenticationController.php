@@ -15,7 +15,7 @@ class SocialAuthenticationController extends Controller
         if ($user) {
             // TODO-me Update image
             auth()->login($user);
-            return redirect('/dashboard');
+            return redirect()->route('dashboard');
         } else {
             $user = User::create([
                 'name' => $userSocial->getName(),
@@ -33,7 +33,7 @@ class SocialAuthenticationController extends Controller
 //                'twitter_provider_id' => $provider == 'twitter' ? $userSocial->getId() : null,
             ]);
             auth()->login($user);
-            return redirect()->route('/dashboard');
+            return redirect()->route('dashboard');
         }
     }
 
