@@ -12,7 +12,7 @@ $DATABASE_URL = [
 ];
 echo 'URL =>'.env('DATABASE_URL');
 if (env('HEROKU_POSTGRES') != null) {
-    $default = env('DB_CONNECTION', 'pgsql');
+    $default =  'pgsql';
     $DATABASE_URL = parse_url(env('DATABASE_URL'));
     $DATABASE_URL['database'] = ltrim($DATABASE_URL['path'], '/');
 }
