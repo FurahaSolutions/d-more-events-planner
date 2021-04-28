@@ -10,16 +10,12 @@
         <div class="container py-xl-5 py-sm-3">
             <!---728x90--->
 
-            <h5 class="main-w3l-title mb-sm-3 mb-2">About Us</h5>
+            <h5 class="main-w3l-title mb-sm-3 mb-2">{{ __('About Us') }}</h5>
             <!---728x90--->
 
             <div class="about-top">
-                <h3 class="subheading-wthree mb-3">Something About Us</h3>
-                <p class="paragraph-agileinfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis
-                    tristique est, et egestas odio. Mauris ac tristique
-                    arcu, sed interdum risus.Integer quis tristique est, et egestas odio. Mauris ac tristique arcu, sed
-                    interdum risus.
-                </p>
+                <h3 class="subheading-wthree mb-3">{{ __('Something About Us') }}</h3>
+                <x-about-content></x-about-content>
             </div>
             <div class="about-main">
                 <div class="about-w3-left mb-4">
