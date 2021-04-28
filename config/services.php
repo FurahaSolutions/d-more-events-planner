@@ -33,24 +33,29 @@ return [
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => env('SOCIAL_LOGIN_CALLBACK_URL'),
+        'redirect' => env('SOCIAL_LOGIN_CALLBACK_URL').'/github',
     ],
 
     'facebook' => [
         'client_id'     => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect'      => env('FACEBOOK_URL'),
+        'redirect'      => env('SOCIAL_LOGIN_CALLBACK_URL').'/facebook',
     ],
 
     'twitter' => [
         'client_id'     => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect'      => env('TWITTER_URL'),
+        'redirect'      => env('SOCIAL_LOGIN_CALLBACK_URL').'/twitter',
     ],
     'google' => [
         'client_id'     => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect'      => env('GOOGLE_URL'),
+        'redirect'      => env('SOCIAL_LOGIN_CALLBACK_URL').'/google',
+    ],
+    'bitbucket' => [
+        'client_id'     => env('BITBUCKET_CLIENT_ID'),
+        'client_secret' => env('BITBUCKET_CLIENT_SECRET'),
+        'redirect'      => env('SOCIAL_LOGIN_CALLBACK_URL').'/google',
     ],
 
 ];

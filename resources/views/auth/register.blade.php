@@ -7,9 +7,7 @@
     <x-guest-layout>
         <x-auth-card>
             <x-slot name="logo">
-                <a href="/">
-                    <x-application-logo class=""/>
-                </a>
+                <x-social-login />
             </x-slot>
 
             <!-- Validation Errors -->
