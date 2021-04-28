@@ -62,8 +62,8 @@
                     </div>
                 </span>
             @else
-                <a class="mr-3 mr-lg-4" href="{{ route('login') }}">Login</a>
-                <a class="mr-4" href="{{ route('register') }}">Register</a>
+                <a class="mr-3 mr-lg-4" href="/login">Login</a>
+                <a class="mr-4" href="/register">Register</a>
             @endauth
         </div>
     @endif

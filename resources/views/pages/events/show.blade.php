@@ -3,7 +3,7 @@
         <x-header page="events"/>
         <h1 class="inner-title-agileits-w3layouts">Events</h1>
     </div>
-    <x-breadcrumb :links="['Events', $event]"></x-breadcrumb>
+    <x-breadcrumb :links="$links"></x-breadcrumb>
 
     <!-- Stories -->
     <section class="stories-section py-5">

@@ -4,20 +4,20 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class GalleryPageTest extends TestCase
+class ContactPageTest extends TestCase
 {
     /**
-     * User should be able to visit landing page.
+     * User should be able to visit contact page.
      * GET /
      * @group pages
-     * @group home-page
+     * @group contact-page
      * @test
      * @return void
      */
     public function user_can_visit_landing_page()
     {
-        $response = $this->get('/gallery');
+        $response = $this->get('/contact');
         $response->assertStatus(200);
-        $response->assertSeeText('Photo');
+        $response->assertSeeText('Contact');
     }
 }
