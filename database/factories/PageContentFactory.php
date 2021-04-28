@@ -22,8 +22,8 @@ class PageContentFactory extends Factory
     public function definition()
     {
         return [
-//            'content_type' => $this->faker->slug,
-//            'content' => $this->faker->paragraph
+            'content_type' => $this->faker->slug,
+            'content' => $this->faker->paragraph
         ];
     }
     /**
