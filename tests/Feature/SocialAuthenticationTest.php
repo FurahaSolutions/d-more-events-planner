@@ -15,7 +15,17 @@ class SocialAuthenticationTest extends TestCase
      * @test
      * @return void
      */
-    public function test_user_can_login_using_google_account()
+    public function user_should_be_redirected_to_social_login_page() {
+        $this->get('/auth/redirect/google')
+            ->assertStatus(302);
+    }
+    /**
+     * A basic feature test example
+     * @group auth
+     * @test
+     * @return void
+     */
+    public function user_can_login_using_google_account()
     {
         $providerName = 'google';
         $socialAccount = User::factory()->create(['provider' => $providerName]);
@@ -45,7 +55,7 @@ class SocialAuthenticationTest extends TestCase
      * @test
      * @return void
      */
-    public function test_user_can_login_using_facebook_account()
+    public function user_can_login_using_facebook_account()
     {
         $providerName = 'google';
         $socialAccount = User::factory()->create(['provider' => $providerName]);
@@ -75,7 +85,7 @@ class SocialAuthenticationTest extends TestCase
      * @test
      * @return void
      */
-    public function test_user_can_login_using_twitter_account()
+    public function user_can_login_using_twitter_account()
     {
         $providerName = 'google';
         $socialAccount = User::factory()->create(['provider' => $providerName]);
