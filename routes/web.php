@@ -46,8 +46,6 @@ Route::get('/dashboard', function () {
 
 Route::get('/auth/redirect/{provider}', [SocialAuthenticationController::class, 'redirect']);
 
-Route::get('/auth/callback/github', function () {
-
-});
+Route::get('/auth/callback/{provider}', [SocialAuthenticationController::class, 'callback']);
 
 require __DIR__ . '/auth.php';

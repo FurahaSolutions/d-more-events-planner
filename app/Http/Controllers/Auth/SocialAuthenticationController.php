@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialAuthenticationController extends Controller
@@ -20,6 +21,7 @@ class SocialAuthenticationController extends Controller
             $user = User::create([
                 'name' => $userSocial->getName(),
                 'email' => $userSocial->getEmail(),
+                'password' => Str::random(36)
 //                'image' => null,
 //                'github_image' => $provider == 'github' ? $userSocial->getAvatar() : null,
 //                'facebook_image' => $provider == 'facebook' ? $userSocial->getAvatar() : null,
