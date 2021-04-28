@@ -1,7 +1,7 @@
 <x-shell>
     <div class="banner inner-banner" id="home">
-        <x-header page="gallery"/>
-        <h1 class="inner-title-agileits-w3layouts">Photo Album</h1>
+        <x-header page="events"/>
+        <h1 class="inner-title-agileits-w3layouts">Events</h1>
     </div>
     <x-breadcrumb :links="$links"></x-breadcrumb>
     <!-- gallery -->
@@ -9,7 +9,7 @@
         <div class="container py-xl-5 py-sm-3">
             <!---728x90--->
 
-            <h5 class="main-w3l-title mb-sm-3 mb-2">Photo Album</h5>
+            <h5 class="main-w3l-title mb-sm-3 mb-2">Events</h5>
             <!---728x90--->
 
             <div class="row w3ls_gallery_grids">

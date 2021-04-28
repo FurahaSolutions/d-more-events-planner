@@ -18,9 +18,6 @@
             <li {{ $attributes->class(['nav-item', 'active' => request()->routeIs('about')]) }}>
                 <a class="nav-link" href="/about">About</a>
             </li>
-            <li {{ $attributes->class(['nav-item', 'active' => request()->routeIs('gallery')]) }}>
-                <a class="nav-link" href="/gallery">Gallery</a>
-            </li>
             <li {{ $attributes->class(['nav-item','dropdown', 'active' => request()->routeIs('event')]) }}>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true"
