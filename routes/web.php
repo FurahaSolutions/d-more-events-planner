@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Auth\SocialAuthenticationController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
@@ -26,12 +27,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
-
-Route::get('/contact', function () {
-    return view('pages.contact')->with('links', [
-        'name' => 'About Us'
-    ]);
-})->name('contact');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('events/{event}', [EventController::class, 'show'])->name('event');
 
