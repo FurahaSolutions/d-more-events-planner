@@ -5,7 +5,13 @@
             <a href="/">Home</a>
         </li>
         @foreach($links as $link)
-            <li class="breadcrumb-item active" aria-current="page">{{ $link }}</li>
+            <li class="breadcrumb-item active" aria-current="page">
+                @if($link['isLink'])
+                    <a href="/{{ $link['link'] }}">{{ $link['name'] }}</a>
+                @else
+                    {{ $link['name'] }}
+                @endif
+            </li>
         @endforeach
     </ol>
 </nav>
