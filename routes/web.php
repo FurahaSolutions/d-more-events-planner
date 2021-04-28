@@ -36,10 +36,6 @@ Route::get('/contact', function () {
 
 Route::get('events/{event}', [EventController::class, 'show'])->name('event');
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
