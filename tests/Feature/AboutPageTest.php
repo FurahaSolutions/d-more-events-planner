@@ -14,7 +14,7 @@ class AboutPageTest extends TestCase
      * @test
      * @return void
      */
-    public function user_can_visit_landing_page()
+    public function user_can_visit_about_page()
     {
         $response = $this->get('/about');
         $response->assertStatus(200);
