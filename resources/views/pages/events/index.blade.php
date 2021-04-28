@@ -3,7 +3,7 @@
         <x-header page="gallery"/>
         <h1 class="inner-title-agileits-w3layouts">Photo Album</h1>
     </div>
-    <x-breadcrumb :links="['Our Gallery']"></x-breadcrumb>
+    <x-breadcrumb :links="$links"></x-breadcrumb>
     <!-- gallery -->
     <section class="gallery py-5">
         <div class="container py-xl-5 py-sm-3">

@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Auth\SocialAuthenticationController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,19 +23,11 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/about', function () {
-    return view('pages.about');
-})->name('about');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
-Route::get('/gallery', function () {
-    return view('pages.gallery');
-})->name('gallery');
-
-
-Route::get('/contact', function () {
-    return view('pages.contact');
-})->name('contact');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('events/{event}', [EventController::class, 'show'])->name('event');
 

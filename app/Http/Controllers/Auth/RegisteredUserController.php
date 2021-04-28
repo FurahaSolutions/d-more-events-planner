@@ -19,7 +19,10 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        return view('auth.register')
+            ->with('links', [
+            ['name' => 'Register', 'isLink' => false, 'link' => null],
+        ]);
     }
 
     /**
