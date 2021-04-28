@@ -14,7 +14,7 @@ class ContactPageTest extends TestCase
      * @test
      * @return void
      */
-    public function user_can_visit_landing_page()
+    public function user_can_visit_contact_page()
     {
         $response = $this->get('/contact');
         $response->assertStatus(200);
