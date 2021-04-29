@@ -3,7 +3,7 @@
         <x-header page="contact"/>
         <h1 class="inner-title-agileits-w3layouts">About Us</h1>
     </div>
-    <x-breadcrumb :links="$links"></x-breadcrumb>
+    <x-breadcrumb></x-breadcrumb>
 
     <!-- contact -->
     <section class="contact py-5">

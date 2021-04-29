@@ -3,7 +3,7 @@
         <x-header page="about"/>
         <h1 class="inner-title-agileits-w3layouts">Register</h1>
     </div>
-    <x-breadcrumb :links="$links"></x-breadcrumb>
+    <x-breadcrumb></x-breadcrumb>
     <x-guest-layout>
         <x-auth-card>
             <x-slot name="logo">

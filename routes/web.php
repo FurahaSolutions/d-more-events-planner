@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Auth\SocialAuthenticationController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,9 +31,7 @@ Route::get('events', [EventController::class, 'index'])->name('events.index');
 
 Route::get('events/{event}', [EventController::class, 'show'])->name('events.show');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/auth/redirect/{provider}', [SocialAuthenticationController::class, 'redirect']);
 

@@ -42,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             {{ $header }}
         </h1>
     </div>
-    <x-breadcrumb :links="['Contact Us']"></x-breadcrumb>
+    <x-breadcrumb></x-breadcrumb>
 
 </header>
 <main>

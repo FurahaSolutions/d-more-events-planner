@@ -3,7 +3,7 @@
         <x-header page="events"/>
         <h1 class="inner-title-agileits-w3layouts">Events</h1>
     </div>
-    <x-breadcrumb :links="$links"></x-breadcrumb>
+    <x-breadcrumb></x-breadcrumb>
     <!-- gallery -->
     <section class="gallery py-5">
         <div class="container py-xl-5 py-sm-3">
