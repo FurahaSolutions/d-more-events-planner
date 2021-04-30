@@ -1,12 +1,1 @@
-.                                                                   1 / 1 (100%)<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="refresh" content="0;url='http://localhost/events/4'" />
-
-        <title>Redirecting to http://localhost/events/4</title>
-    </head>
-    <body>
-        Redirecting to <a href="http://localhost/events/4">http://localhost/events/4</a>.
-    </body>
-</html>
+............F..................                                   31 / 31 (100%)

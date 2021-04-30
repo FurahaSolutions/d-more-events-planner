@@ -9,21 +9,6 @@ use Tests\TestCase;
 class EventPageTest extends TestCase
 {
     /**
-     * User should be able to visit event page.
-     * GET /events/:event
-     * @group pages
-     * @group events-page
-     * @test
-     * @return void
-     */
-    public function user_can_visit_event_page()
-    {
-        $response = $this->get('/events/weddings');
-        $response->assertStatus(200);
-        $response->assertSeeText('Weddings');
-    }
-
-    /**
      * User should be able to visit events page.
      * GET /events
      * @group pages
@@ -66,7 +51,6 @@ class EventPageTest extends TestCase
         $user = User::factory()->create();
         $event = Event::factory()->make()->toArray();
         $response = $this->actingAs($user)->post('/events', $event);
-        echo $response->content();
         $response->assertStatus(302);
         $this->assertNotNull(Event::where('name', $event['name'])->first());
     }

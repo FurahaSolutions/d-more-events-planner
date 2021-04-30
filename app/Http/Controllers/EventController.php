@@ -18,12 +18,12 @@ class EventController extends Controller
         return view('pages.events.index');
     }
 
-    public function show($event)
+    public function show(Event $event)
     {
         return view('pages.events.show')
             ->with('links', [
                 ['name' => 'Events', 'isLink' => true, 'link' => 'events'],
-                ['name' => Str::title($event), 'isLink' => false, 'link' => null],
+                ['name' => Str::title($event->name), 'isLink' => false, 'link' => null],
             ]);
     }
     public function store(Request $request) {
