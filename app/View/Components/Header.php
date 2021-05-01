@@ -8,13 +8,9 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
-class header extends Component
+class Header extends Component
 {
     public $page;
-    /**
-     * @var EventType[]|Collection
-     */
-    public $eventTypes;
 
     /**
      * Create a new component instance.
@@ -23,7 +19,6 @@ class header extends Component
      */
     public function __construct($page)
     {
-        $this->eventTypes = EventType::all();
         $this->page = $page;
     }
 

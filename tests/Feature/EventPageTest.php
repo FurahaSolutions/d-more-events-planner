@@ -19,6 +19,7 @@ class EventPageTest extends TestCase
     public function user_can_visit_events_page()
     {
         $response = $this->get('/events');
+        echo $response->content();
         $response->assertStatus(200);
         $response->assertSeeText('Events');
     }
