@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EventStoreRequest;
 use App\Models\Event;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -26,9 +28,17 @@ class EventController extends Controller
                 ['name' => Str::title($event->name), 'isLink' => false, 'link' => null],
             ]);
     }
-    public function store(Request $request) {
+
+    /**
+     * @param EventStoreRequest $request
+     * @return RedirectResponse
+     */
+    public function store(EventStoreRequest $request): RedirectResponse
+    {
         $event = Event::create($request->all());
         return redirect()->route('events.show', ['event' => $event->id])
             ->with('status', 'Profile updated!');
     }
+
+
 }

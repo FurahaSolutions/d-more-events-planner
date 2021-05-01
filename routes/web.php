@@ -28,9 +28,11 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-Route::resource('events', EventController::class);
+Route::resource('events/types', EventTypeController::class, ['as' => 'event.types'])->parameters([
+    'types' => 'eventType:slug',
+]);
 
-Route::get('events/types/{eventType:slug}', [EventTypeController::class, 'show']);
+Route::resource('events', EventController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 

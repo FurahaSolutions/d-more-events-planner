@@ -30,6 +30,7 @@ class breadcrumb extends Component
             'login' => [['name' => 'Login', 'isLink' => false, 'link' => null]],
             'password.request' => [['name' => 'Request Password Reset', 'isLink' => false, 'link' => null]],
             'password.reset' => [['name' => 'Reset Password', 'isLink' => false, 'link' => null]],
+            'event.types.types.index' => [['name' => 'Events', 'isLink' => false, 'link' => null]]
         ];
         if($links == null) {
             $links = $appLinks[request()->route()->getName()];

@@ -5,21 +5,19 @@
     </div>
     <x-breadcrumb></x-breadcrumb>
     <x-auth-validation-errors></x-auth-validation-errors>
-    <form action="/events" method="post">
+    <form action="/events/types" method="post">
         @csrf
         <div class="d-flex flex-wrap justify-content-between mt-3">
-            <div class="form-group col-lg-6 d-flex flex-wrap justify-content-between">
-                <label class="col-form-label col-4" for="name">Event Type</label>
-                <div class="col-lg-8">
-                    <select class="form-control" name="event_type" id="event-type">
-
-                    </select>
-                </div>
-            </div>
             <div class="form-group col-lg-6 d-flex flex-wrap justify-content-between">
                 <label class="col-form-label col-4" for="name">Event Name</label>
                 <div class="col-lg-8">
                     <input name="name" class="form-control" id="name" placeholder="Event Name">
+                </div>
+            </div>
+            <div class="form-group col-lg-6 d-flex flex-wrap justify-content-between">
+                <label class="col-form-label col-4" for="name">Slug</label>
+                <div class="col-lg-8">
+                    <input name="slug" class="form-control" id="name" placeholder="Slug">
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Event;
+use App\Models\EventType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class EventFactory extends Factory
@@ -22,7 +23,8 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->sentence
+            'name' => $this->faker->sentence,
+            'event_type_id' => EventType::factory()->create()->id
         ];
     }
 }

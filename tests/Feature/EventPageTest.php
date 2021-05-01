@@ -40,9 +40,25 @@ class EventPageTest extends TestCase
 
     /**
      * User should be able to create event page.
-     * GET /
+     * POST /events
      * @group pages
-     * @group events-page-1
+     * @group events-page
+     * @test
+     * @return void
+     */
+    public function unauthenticated_user_cannot_create_event_page()
+    {
+        $user = User::factory()->create();
+        $event = Event::factory()->make()->toArray();
+        $response = $this->post('/events', $event);
+        $response->assertStatus(403);
+    }
+
+    /**
+     * User should be able to create event page.
+     * POST /events
+     * @group pages
+     * @group events-page
      * @test
      * @return void
      */
@@ -50,8 +66,40 @@ class EventPageTest extends TestCase
     {
         $user = User::factory()->create();
         $event = Event::factory()->make()->toArray();
-        $response = $this->actingAs($user)->post('/events', $event);
+        $response = $this->actingAs($user)->postJson('/events', $event);
         $response->assertStatus(302);
         $this->assertNotNull(Event::where('name', $event['name'])->first());
+    }
+
+    /**
+     * User should be able to create event page.
+     * POST /events
+     * @group pages
+     * @group events-page
+     * @test
+     * @return void
+     */
+    public function user_receives_error_422_if_name_is_not_provided()
+    {
+        $user = User::factory()->create();
+        $event = Event::factory()->state(['name' => ''])->make()->toArray();
+        $response = $this->actingAs($user)->postJson('/events', $event);
+        $response->assertStatus(422);
+    }
+
+    /**
+     * User should be able to create event page.
+     * POST /events
+     * @group pages
+     * @group events-page
+     * @test
+     * @return void
+     */
+    public function user_receives_error_422_if_event_type_is_not_provided()
+    {
+        $user = User::factory()->create();
+        $event = Event::factory()->state(['event_type_id' => ''])->make()->toArray();
+        $response = $this->actingAs($user)->postJson('/events', $event);
+        $response->assertStatus(422);
     }
 }
