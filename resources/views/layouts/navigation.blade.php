@@ -25,8 +25,9 @@
                     Events
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item text-center" href="/events/stories">Wedding</a>
-                    <a class="dropdown-item text-center" href="/events/typography">Harambee</a>
+                    @foreach($eventTypes as $eventType)
+                    <a class="dropdown-item text-center" href="/events/types/{{ $eventType->slug }}">{{ $eventType->name }}</a>
+                    @endforeach
                 </div>
             </li>
             <li {{ $attributes->class(['nav-item', 'active' => request()->routeIs('contact')]) }}>

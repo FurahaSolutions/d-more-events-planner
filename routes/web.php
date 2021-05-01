@@ -3,7 +3,9 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Auth\SocialAuthenticationController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventTypeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,13 +28,13 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-Route::get('events', [EventController::class, 'index'])->name('events.index');
+Route::resource('events/types', EventTypeController::class, ['as' => 'event.types'])->parameters([
+    'types' => 'eventType:slug',
+]);
 
-Route::get('events/{event}', [EventController::class, 'show'])->name('events.show');
+Route::resource('events', EventController::class);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/auth/redirect/{provider}', [SocialAuthenticationController::class, 'redirect']);
 
