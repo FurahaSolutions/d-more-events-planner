@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EventStoreRequest;
 use App\Models\Event;
+use App\Models\EventType;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -12,7 +13,8 @@ class EventController extends Controller
 {
     public function create()
     {
-        return view('pages.events.create');
+        return view('pages.events.create')
+            ->with('eventTypes', EventType::all());
     }
 
     public function index()

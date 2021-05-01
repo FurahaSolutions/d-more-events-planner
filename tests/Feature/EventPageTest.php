@@ -62,11 +62,11 @@ class EventPageTest extends TestCase
      * @test
      * @return void
      */
-    public function user_can_create_event_page()
+    public function user_can_create_event()
     {
         $user = User::factory()->create();
         $event = Event::factory()->make()->toArray();
-        $response = $this->actingAs($user)->postJson('/events', $event);
+        $response = $this->actingAs($user)->post('/events', $event);
         $response->assertStatus(302);
         $this->assertNotNull(Event::where('name', $event['name'])->first());
     }

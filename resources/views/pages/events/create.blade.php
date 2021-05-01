@@ -12,7 +12,9 @@
                 <label class="col-form-label col-4" for="name">Event Type</label>
                 <div class="col-lg-8">
                     <select class="form-control" name="event_type" id="event-type">
-
+                        @foreach($eventTypes as $eventType)
+                            <option value="{{ $eventType->id }}">{{ $eventType }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
